@@ -4,21 +4,30 @@
 	<title>Psicología Pura</title>
 	<style>
 		body {
-			display: flex;
-			justify-content: center;
-			align-items: center;
 			height: 100%;
 			margin: 0;
 			padding: 0;
 			background-color: #ffffff;
 		}
-		img {
+
+		#main-content {			
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			max-width: 400px;
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		#main-content img {
 			display: block;
-			width: 30%;
+			object-fit: cover;
 		}
 	</style>
 </head>
 <body>
-<img src="logo.jpg" alt="Psicología Pura">
+	<div id="main-content">
+		<img src="logo.png" alt="Psicología Pura">
+	</div>
 </body>
 </html>
