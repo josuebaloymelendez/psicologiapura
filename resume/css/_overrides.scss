@@ -1,10 +1,21 @@
+@font-face {
+    font-family: 'chunkfiveroman';
+    src: url('../fonts/chunkfive-webfont.woff2') format('woff2'),
+         url('../fonts/chunkfive-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #header_main {
 	.header-title {
 		@include flex-all($justify: center, $align: center);
+		margin: 0;
 		font: {
+			size: 3.5rem;
 			family: $secondary-font;
 			weight: 400;
 		}
+		letter-spacing: .1em;
 
 		a { 
 			@include flex-all($direction: column, $justify: center, $align: center);
@@ -16,17 +27,23 @@
 			}
 
 			&:before {
-				background-color: $jack-white;
+				content: "";
+				width: $header-logo-width;
+				height: $header-logo-height;
+				background: {
+					color: $jack-white;
+					image: url(../img/#{$header-logo-image});
+				}
 				border-radius: 50%;
 			}
 
 			&:after {
 				content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit";
 				font: {
-					size: .9rem;
+					size: 1.2rem;
 					family: $primary-font;
 				}
-				letter-spacing: .15em;
+				letter-spacing: .13em;
 			}
 		}
 	}
