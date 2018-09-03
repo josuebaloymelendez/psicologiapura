@@ -167,8 +167,13 @@ body {
     font-weight: 400;
     text-transform: uppercase; }
   .content-container .section-subtitle {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
     padding: 10px;
     color: #0f0f0f;
+    background-color: whitesmoke;
     font-size: .85rem; }
 
 .btn-holder {

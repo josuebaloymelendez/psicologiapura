@@ -85,8 +85,10 @@
 	}
 
 	.section-subtitle {
+		@include justify-content(center);
 		padding: 10px;
 		color: $jack-almost-black;
+		background-color: $jack-almost-white;
 		font-size: .85rem;
 	}
 }
