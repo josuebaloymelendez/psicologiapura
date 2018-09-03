@@ -147,9 +147,9 @@ body {
     align-items: center;
     margin: 0;
     padding: 10px 40px; }
-    .content-container .section-title .section-title-inner,
-    .content-container .section-subtitle .section-title-inner {
-      margin-left: 5px; }
+    .content-container .section-title strong,
+    .content-container .section-subtitle strong {
+      margin-right: 5px; }
   .content-container .section-title {
     color: white;
     background-color: #ff0077;
