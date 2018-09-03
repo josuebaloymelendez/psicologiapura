@@ -1,4 +1,12 @@
-@import url("//fonts.googleapis.com/css?family=Asset|Open+Sans:400,400italic,700,700italic|Oswald|Permanent+Marker");
+@import url("//fonts.googleapis.com/css?family=Courgette|Open+Sans:400,400italic,700,700italic");
+@keyframes rotate-diagonal-1 {
+  0% {
+    transform: rotate3d(1, 1, 0, 0deg); }
+  50% {
+    transform: rotate3d(1, 1, 0, -180deg); }
+  100% {
+    transform: rotate3d(1, 1, 0, -360deg); } }
+
 body, body .dark, body .light, body table, body .neutral, body .pale {
   font-family: "Open Sans", sans-serif;
   font-size: 100%; }
@@ -87,10 +95,8 @@ body {
   -webkit-align-items: center;
   align-items: center;
   margin: 0;
-  font-size: 3.5rem;
   font-family: "chunkfiveroman", sans-serif;
-  font-weight: 400;
-  letter-spacing: .1em; }
+  font-weight: 400; }
   #header_main .header-title a {
     display: -webkit-box;
     display: -webkit-flex;
@@ -122,9 +128,12 @@ body {
       border-radius: 50%; }
     #header_main .header-title a:after {
       content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit";
-      font-size: 1.2rem;
+      font-size: 1vw;
       font-family: "Open Sans", sans-serif;
-      letter-spacing: .13em; }
+      letter-spacing: .3vw; }
+    #header_main .header-title a .header-title-inner {
+      font-size: 4vw;
+      letter-spacing: .3vw; }
 
 @media screen and (min-width: 1024px) {
   #header_main {
@@ -145,12 +154,12 @@ body {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
-    margin: 0;
-    padding: 10px 40px; }
+    margin: 0; }
     .content-container .section-title strong,
     .content-container .section-subtitle strong {
       margin-right: 5px; }
   .content-container .section-title {
+    padding: 10px 40px;
     color: white;
     background-color: #ff0077;
     font-size: 2.3rem;
@@ -158,9 +167,76 @@ body {
     font-weight: 400;
     text-transform: uppercase; }
   .content-container .section-subtitle {
-    color: #996600;
-    background-color: #ffaa00;
+    padding: 10px;
+    color: #0f0f0f;
     font-size: .85rem; }
+
+.btn-holder {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.btn {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  overflow: hidden;
+  height: 60px;
+  color: white;
+  background-color: #0f0f0f;
+  text-decoration: none;
+  position: relative; }
+  .btn .item-inner {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    padding: 0 10px;
+    height: 100%; }
+  .btn:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 0;
+    background-color: #e6006b;
+    transition: all .3s ease-in-out; }
+  .btn:hover:before, .btn:focus:before {
+    animation: rotate-diagonal-1 0.4s linear both; }
+  .btn:hover:after, .btn:focus:after {
+    width: 100%; }
+  .btn-download:before {
+    content: "";
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+    background-color: #ff0077;
+    background-image: url(../svg/download.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50% 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); }
 
 #parallax {
   position: relative;
@@ -177,6 +253,33 @@ body {
 
 #row_about {
   background-color: white; }
+  #row_about .section-title {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; }
+  #row_about .item-summary {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  #row_about .item-text {
+    margin-top: 20px 0 40px;
+    color: #0f0f0f;
+    font-size: 1.125rem;
+    font-family: "Courgette", cursive;
+    font-weight: 300; }
+    #row_about .item-text p {
+      margin: 10px; }
+  #row_about .about-signature {
+    display: block;
+    margin: 10px 0;
+    max-width: 200px; }
   @media screen and (min-width: 1024px) {
     #row_about .content-container {
       display: -webkit-box;

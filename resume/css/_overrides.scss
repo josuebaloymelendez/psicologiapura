@@ -11,11 +11,9 @@
 		@include flex-all($justify: center, $align: center);
 		margin: 0;
 		font: {
-			size: 3.5rem;
 			family: $secondary-font;
 			weight: 400;
 		}
-		letter-spacing: .1em;
 
 		a { 
 			@include flex-all($direction: column, $justify: center, $align: center);
@@ -40,10 +38,15 @@
 			&:after {
 				content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit";
 				font: {
-					size: 1.2rem;
+					size: 1vw;
 					family: $primary-font;
 				}
-				letter-spacing: .13em;
+				letter-spacing: .3vw;
+			}
+
+			.header-title-inner { 
+				font-size: 4vw; 
+				letter-spacing: .3vw;
 			}
 		}
 	}
@@ -65,12 +68,12 @@
 	.section-subtitle { 
 		@include inline-flex-all($align: center);
 		margin: 0;
-		padding: 10px 40px;
 
 		strong { margin-right: 5px; }
 	}
 
 	.section-title { 
+		padding: 10px 40px;
 		color: $color-over-primary;
 		background-color: $primary-color;
 		font: {
@@ -82,9 +85,56 @@
 	}
 
 	.section-subtitle {
-		color: $color-over-secondary;
-		background-color: $secondary-color;
+		padding: 10px;
+		color: $jack-almost-black;
 		font-size: .85rem;
+	}
+}
+
+.btn-holder { @include flexbox; }
+
+.btn {
+	@include inline-flex-all($align: center);
+	overflow: hidden;
+	height: 60px;
+	color: $jack-white;
+	background-color: $jack-almost-black;
+	text-decoration: none;
+
+	.item-inner { 
+		@include flex-all($justify: center, $align: center); 
+		position: relative;
+		z-index: 3;
+		padding: 0 10px;
+		height: 100%;
+	}
+
+	@include mask-fullsize("after") {
+		width: 0;
+		background-color: darken($primary-color, 5%);
+		transition: all .3s ease-in-out;
+	}
+
+	@include hover {
+		&:before { animation: rotate-diagonal-1 0.4s linear both; }
+		&:after { width: 100%; }
+	}
+
+	&-download {
+		@include pseudo {
+			position: relative;
+			z-index: 2;
+			width: 60px;
+			height: 60px;
+			background: {
+				color: $primary-color;
+				image: url(../svg/download.svg);
+				repeat: no-repeat;
+				position: center;
+				size: 50% 50%;
+			}
+			box-shadow: 0 0 20px rgba($jack-black, .3);
+		}
 	}
 }
 
@@ -101,7 +151,29 @@
 }
 
 #row_about { 
-	background-color: $jack-white; 
+	background-color: $jack-white;
+
+	.section-title { @include justify-content(center); }
+
+	.item-summary { @include flex-all($direction: column); }
+
+	.item-text {
+		margin-top: 20px 0 40px;
+		color: $jack-almost-black;
+		font: {
+			size: 1.125rem;
+			family: $tertiary-font;
+			weight: 300;
+		}
+
+		p { margin: 10px; }
+	}
+
+	.about-signature {
+		display: block; 
+		margin: 10px 0;
+		max-width: 200px;
+	}
 
 	@include respond-to($vp-large) {
 		.content-container { @include flex-all($align: center); }

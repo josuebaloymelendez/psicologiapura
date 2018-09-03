@@ -82,12 +82,12 @@ $footer-logo-image			: $header-logo-image;
 // Should be uniform across DWS sites for browser security reasons
 // Please remember to remove any unneeded Google fonts from this declaration to save some bandwidth.
 // All $primary-font fonts MUST have 400/400italic/700/700italic values!!!
-@import url("//fonts.googleapis.com/css?family=Asset|Open+Sans:400,400italic,700,700italic|Oswald|Permanent+Marker");
+@import url("//fonts.googleapis.com/css?family=Courgette|Open+Sans:400,400italic,700,700italic");
 
 // list our fonts
 $primary-font			: "Open Sans", sans-serif;
 $secondary-font			: 'chunkfiveroman', sans-serif;
-$tertiary-font			: "Permanent Marker", cursive;
+$tertiary-font			: 'Courgette', cursive;
 $too-many-fonts			: "";
 
 $base-font-size			: 16px;
