@@ -1,0 +1,94 @@
+// ------------------------------------------------------------
+// Settings
+
+// :: Breakpoints
+// :: Sizing
+// :: Colors
+// :: Typography
+// ------------------------------------------------------------
+
+
+// ------------------------------------------------------------
+// :: Breakpoints
+// ------------------------------------------------------------
+
+// Defining viewport sizes.	 This could get more complex as we grow, but for now we are using three.
+// DO NOT CHANGE THESE. YES I'M TALKING TO YOU.
+
+$vp-small				: 320px;	// small size 
+$vp-mid					: 768px;	// mid size
+$vp-large				: 1024px;	// large size
+
+$vp-max					: 1350px;	// max viewport. Syntactically makes for a nicer option
+
+
+// ------------------------------------------------------------
+// :: Sizing
+// ------------------------------------------------------------
+
+// Feel free to define custom sizing here, but the less complex the better, generally
+
+$site-width				: $vp-large;
+
+// ------------------------------------------------------------
+// :: Colors
+// ------------------------------------------------------------
+
+// Define the main colour palette.
+// Feel free to change any of the values in this first group of colors per the needs of the design.
+// In a DWS these can be redefined safely per individual campus
+$jack-black				: rgb(0,0,0);
+$jack-almost-black		: rgb(15,15,15);
+$jack-white				: rgb(255,255,255);
+$jack-almost-white		: rgb(245,245,245);
+$macy-grey				: rgb(204,204,204);
+$ron-burgundy			: rgb(70,0,0);
+$al-green				: rgb(103,178,177);
+$beige-ruth				: rgb(240,240,236);
+$agent-orange			: rgb(255,0,119);
+$betty-blue				: rgb(168,217,244);
+$red-fox				: rgb(255,170,0);
+$yellow-ono				: rgb(207,190,108);
+$purple-rain			: rgb(116,39,170);
+$foxy-brown				: rgb(82,40,12);
+
+$primary-color			: $agent-orange;
+$color-over-primary		: $jack-white;
+
+$secondary-color		: $red-fox;
+$color-over-secondary	: darken($red-fox, 20%);
+
+
+// Branding colors for third parties.
+// Do NOT change these, please.
+$facebook				: rgb(59,89,152);
+$twitter				: rgb(29,202,255);
+$youtube				: rgb(255,0,0);
+$instagram				: rgb(215,53,118);
+
+// ------------------------------------------------------------
+// :: Images and Logos
+// ------------------------------------------------------------
+
+$header-logo-image			: "/pics/header_logo.png";
+$footer-logo-image			: $header-logo-image;
+
+
+// ------------------------------------------------------------
+// :: Typography
+// ------------------------------------------------------------
+
+// Import Google fonts or Adobe Typekit resources, or define webfonts from uploaded files
+// Should be uniform across DWS sites for browser security reasons
+// Please remember to remove any unneeded Google fonts from this declaration to save some bandwidth.
+// All $primary-font fonts MUST have 400/400italic/700/700italic values!!!
+@import url("//fonts.googleapis.com/css?family=Asset|Open+Sans:400,400italic,700,700italic|Oswald|Permanent+Marker");
+
+// list our fonts
+$primary-font			: "Open Sans", sans-serif;
+$secondary-font			: 'Asset', cursive;
+$tertiary-font			: "Permanent Marker", cursive;
+$too-many-fonts			: "";
+
+$base-font-size			: 16px;
+

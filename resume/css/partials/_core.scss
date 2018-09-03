@@ -1,0 +1,28 @@
+// Initializing baseline fonts/sizes
+// ------------------------------------------------------------
+
+body, body .dark, body .light, body table, body .neutral, body .pale {
+	font-family: $primary-font;
+	font-size: 100%;
+}
+
+// High level structure
+// ------------------------------------------------------------
+
+html {
+	@include sticky-footer-layout;
+}
+
+body {	
+	min-width: $vp-small;
+	background-color: $jack-white;
+	color: $jack-black; 
+}
+
+.width-constrain-row {
+	.homepage-row-inner {
+		@include respond-to($vp-large) {
+			@include width-constrain;
+		}
+	}
+}

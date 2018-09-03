@@ -1,0 +1,94 @@
+#header_main {
+	.header-title {
+		@include flex-all($justify: center, $align: center);
+		font: {
+			family: $secondary-font;
+			weight: 400;
+		}
+
+		a { 
+			@include flex-all($direction: column, $justify: center, $align: center);
+			color: $jack-white; 
+			text: {
+				transform: uppercase;
+				shadow: 2px 2px 10px rgba($jack-black, .2);
+				decoration: none; 
+			}
+
+			&:before {
+				background-color: $jack-white;
+				border-radius: 50%;
+			}
+
+			&:after {
+				content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit";
+				font: {
+					size: .9rem;
+					family: $primary-font;
+				}
+				letter-spacing: .15em;
+			}
+		}
+	}
+
+	@include respond-to($vp-large) {
+		width: 100%;
+		
+		.header-title { 
+			padding: 0;
+			height: 100vh; 
+		}
+	}
+}
+
+.content-container {
+	padding: 40px 0;
+
+	.section-title,
+	.section-subtitle { 
+		@include inline-flex-all($align: center);
+		margin: 0;
+		padding: 10px 40px;
+
+		.section-title-inner { margin-left: 5px; }
+	}
+
+	.section-title { 
+		color: $color-over-primary;
+		background-color: $primary-color;
+		font: {
+			size: 2.3rem;
+			family: $secondary-font;
+			weight: 400;
+		}
+		text-transform: uppercase;
+	}
+
+	.section-subtitle {
+		color: $color-over-secondary;
+		background-color: $secondary-color;
+		font-size: .85rem;
+	}
+}
+
+#parallax {
+	@include mask-fullsize {
+		background: linear-gradient(
+			135deg, 
+			rgba($secondary-color, .8) 0%,
+			rgba($primary-color, .8) 100%
+		);
+	}
+
+	position: fixed;
+}
+
+#row_about { 
+	background-color: $jack-white; 
+
+	@include respond-to($vp-large) {
+		.content-container { @include flex-all($align: center); }
+		.item-summary { @include order(2); }
+		.item-image-holder { @include order(1); }
+	}
+}
